@@ -1893,7 +1893,7 @@ class App:
         list_frame = ttk.Frame(paned)
         self.tree = ttk.Treeview(list_frame, columns=[c[0] for c in self.COLUMNS], show="headings", selectmode="extended")
         for cid, title, width, anchor in self.COLUMNS:
-            self.tree.heading(cid, text=title, anchor=anchor)
+            self.tree.heading(cid, text=title, anchor="center")  # titles centred; cells keep their own alignment
             self.tree.column(cid, width=width, anchor=anchor, stretch=(cid == "name"))
         for tag, color in (("downloading", BLUE), ("seeding", GREEN), ("paused", MUTED), ("queued", VIOLET),
                            ("error", RED), ("stalled", YELLOW), ("checking", ACCENT)):
